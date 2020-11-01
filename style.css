@@ -9,7 +9,6 @@ html {
 }
 
 body {
-  font-family: "rubik";
   font-weight: 400;
   font-size: 0.6rem;
   line-height: 150%;
@@ -119,15 +118,32 @@ body {
   border-radius: 10px 10px 10px 0;
   max-width: 70%;
   margin-bottom: 10px;
+  animation: mymove 0.8s ease-in-out 2s backwards;
 }
 
+.q-lsat {
+  animation: mymove 0.8s ease-in-out 11s backwards;
+}
 .dog_pictures {
   max-width: 68%;
   align-self: flex-end;
   margin-top: 10px;
   margin-bottom: 10px;
+  animation: mymove 2s ease-in-out 5s backwards;
 }
 
+@keyframes mymove {
+  0% {
+    transform: translateY(-5%);
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
+  }
+}
 .dog_pictures img {
   height: 45px;
   width: 45px;
@@ -143,9 +159,10 @@ body {
   max-width: 70%;
   margin-bottom: 10px;
   align-self: flex-end;
+  animation: mymove 1s ease-in-out 8s backwards;
 }
 
-.choice {
+.radio_container {
   background: linear-gradient(
     to right,
     hsl(293, 100%, 63%),
@@ -157,23 +174,25 @@ body {
   width: 85%;
   border-radius: 10px 10px 10px 0;
   margin-bottom: 10px;
+  animation: mymove 1s ease-in-out 14s backwards;
 }
 
-.choice p {
+.radio_container p {
   margin-left: 5px;
+  font-size: 12px;
 }
 
-.circle {
+.radio {
   content: "";
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  border: 1px solid hsl(293, 100%, 63%);
+  border: 1px solid white;
 }
 
 .price {
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-left: auto;
 }
 
@@ -184,14 +203,15 @@ body {
   background-color: hsl(0, 0%, 100%);
   color: lightgrey;
   width: 100%;
-  padding: 5px;
+  font-size: 15px;
+  padding: 8px;
   border-radius: 30px;
   margin: 10px 0;
 }
 
 .send {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background-color: hsl(271, 36%, 24%);
   display: flex;
@@ -258,38 +278,31 @@ body {
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
-@media ( max-width:768px){
 
-  .container{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 100%;
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
   }
-
-
-  .card{
-      flex-direction: column;
-      align-items: center;
-      height: 100%;  
-      padding: 0;           
+  .card {
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding: 0;
   }
-  
-  .info{
-      display: block;
-      text-align: center;
-      width: 100%;
-      margin-top: 70px;
-      margin-left: 0;
+  .info {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-top: 70px;
+    margin-left: 0;
   }
-  
-  .info p{
-      padding: 0 45px;
+  .info p {
+    padding: 0 45px;
   }
-
-  .card::after{
-      display: none;
+  .card::after {
+    display: none;
   }
-
-
 }
